@@ -1,4 +1,7 @@
-# task-tracker
+<h1 align="center">TASK TRACKER</h1>
+<p align="center">
+ :construction: Project in construction :construction:
+</p>
 
 ## Project setup
 ```

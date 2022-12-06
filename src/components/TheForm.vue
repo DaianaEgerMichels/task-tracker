@@ -44,7 +44,8 @@ export default defineComponent({
   name: "TheForm",
   data () {
     return {
-      timeInSeconds: 0
+      timeInSeconds: 0,
+      stopwatch: 0
     }
   },
   computed: {
@@ -55,12 +56,12 @@ export default defineComponent({
   methods: {
     start () {
       //start couting
-      setInterval(() => {
+      this.stopwatch = setInterval(() => {
         this.timeInSeconds += 1
       }, 1000);  
     },
     finalize () {
-        console.log('stop');
+        clearInterval(this.stopwatch)
     }
   },
 });

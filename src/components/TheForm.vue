@@ -16,9 +16,7 @@
         <div
           class="is-flex is-align-items-center is-justify-content-space-between"
         >
-          <section>
-            <strong>{{elapsedTime}}</strong>
-          </section>
+          <Chronometer :timeInSeconds="timeInSeconds"/>
           <button class="button" @click="start">
             <span class="icon">
               <i class="fas fa-play"></i>
@@ -39,18 +37,15 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import Chronometer from "./Chronometer.vue";
 
 export default defineComponent({
+  components: { Chronometer },
   name: "TheForm",
   data () {
     return {
       timeInSeconds: 0,
       stopwatch: 0
-    }
-  },
-  computed: {
-    elapsedTime () : string {
-      return new Date(this.timeInSeconds * 1000).toISOString().substr(11, 8);
     }
   },
   methods: {

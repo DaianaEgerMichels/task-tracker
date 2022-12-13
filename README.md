@@ -3,6 +3,8 @@
  :construction: Project in construction :construction:
 </p>
 
+<img src="src/assets/img/view.png" alt="view">
+
 ## Project setup
 ```
 npm install

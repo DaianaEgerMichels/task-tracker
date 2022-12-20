@@ -42,6 +42,8 @@ export default defineComponent({
     finalize() {
       this.stopwatchRunning = false;
       clearInterval(this.stopwatch);
+      this.$emit('finishedStopwatch', this.timeInSeconds)
+      this.timeInSeconds = 0
     },
   },
 });

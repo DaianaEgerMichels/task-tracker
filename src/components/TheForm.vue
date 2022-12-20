@@ -10,10 +10,11 @@
           type="text"
           class="input"
           placeholder="Which task do you want ro start?"
+          v-model="description"
         />
       </div>
       <div class="column">
-        <Timer/>
+        <Timer @finishedStopwatch="endTask"/>
       </div>
     </div>
   </div>
@@ -24,8 +25,23 @@ import { defineComponent } from "vue";
 import Timer from "./Timer.vue";
 
 export default defineComponent({
-  components: { Timer },
   name: "TheForm",
+  emits: ['whenSavingTask'],
+  components: { Timer },
+  data () {
+    return {
+      description: ''
+    }
+  },
+  methods: {
+    endTask (elapsedTime: number) : void {
+      this.$emit('whenSavingTask', {
+         durationInSeconds: elapsedTime,
+         description: this.description
+      })
+      this.description = ''
+    }
+  }
  
 });
 </script>

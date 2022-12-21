@@ -3,6 +3,7 @@
         <h1>
             <img src="../assets/logo.svg" alt="logo">
         </h1>
+        <button class="button" @click="changeTheme">{{textButton}}</button>
    </header>
 </template>
 
@@ -10,7 +11,27 @@
     import {defineComponent} from 'vue'
 
     export default defineComponent({
-        name: 'SideBar'
+        name: 'SideBar',
+        emits: ['theChangedTheme'],
+        data () {
+            return {
+                darkModeActive: false,
+            }
+        },
+        computed: {
+            textButton () {
+                if(this.darkModeActive) {
+                    return 'Disable dark mode'
+                }
+                return 'Activate dark mode'
+            }
+        },
+        methods: {
+            changeTheme () {
+                this.darkModeActive = !this.darkModeActive
+                this.$emit('theChangedTheme', this.darkModeActive)
+            }
+        }
     }) 
     
 </script>
@@ -21,6 +42,7 @@
     background: #0d3b66;
     width: 100%;
     height: 100vh;
+    text-align: center;
     }
     img {
         width: 100%;

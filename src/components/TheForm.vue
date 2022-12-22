@@ -9,7 +9,7 @@
         <input
           type="text"
           class="input"
-          placeholder="Which task do you want ro start?"
+          placeholder="Which task do you want to start?"
           v-model="description"
         />
       </div>

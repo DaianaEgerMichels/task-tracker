@@ -1,6 +1,6 @@
 <h1 align="center">TASK TRACKER</h1>
 <p align="center">
- :construction: Project in construction :construction:
+See the project here: https://tasktracker-vuejs-alura.netlify.app/
 </p>
 
 <img src="src/assets/img/view.png" alt="view">

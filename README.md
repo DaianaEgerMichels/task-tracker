@@ -1,6 +1,8 @@
 <h1 align="center">TASK TRACKER</h1>
 <p align="center">
-See the project here: https://tasktracker-vuejs-alura.netlify.app/
+See the project here: </p>
+<p align="center">
+https://tasktracker-vuejs-alura.netlify.app/
 </p>
 
 <img src="src/assets/img/view.png" alt="view">

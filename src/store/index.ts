@@ -1,5 +1,5 @@
 import { InjectionKey } from "vue";
-import { createStore } from "vuex";
+import { createStore, Store } from "vuex";
 import IProject from "./../interfaces/IProject";
 
 interface State {

@@ -33,8 +33,7 @@
 
 <script lang=ts>
 import { computed, defineComponent } from "vue";
-import { useStore } from "@/store";
-import IProject from '../interfaces/IProject'
+import { useStore } from "@/store";2
 
     export default defineComponent({
         // eslint-disable-next-line vue/multi-word-component-names

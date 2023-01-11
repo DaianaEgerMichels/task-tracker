@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Tasks from '../views/Tasks.vue';
 import Projects from '../views/Projects.vue';
+import TheForm from '../views/Projects/TheForm.vue'
 
 
 const routes: RouteRecordRaw[] = [
@@ -13,6 +14,17 @@ const routes: RouteRecordRaw[] = [
         path: '/projects',
         name: 'Projects',
         component: Projects
+    },
+    {
+        path: '/projects/new',
+        name: 'New Project',
+        component: TheForm
+    },
+    {
+        path: '/projects/:id',
+        name: 'Edit Project',
+        component: TheForm,
+        props: true
     },
 ];
 

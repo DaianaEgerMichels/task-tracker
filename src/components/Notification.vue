@@ -1,27 +1,13 @@
 <template>
     <div class="notification">
-        <article class="message is-success">
+        <article class="message " 
+        :class="context[notification.type]"
+        v-for="notification in notifications" :key="notification.id">
             <div class="message-header">
-                Success!
+                {{notification.title}}
             </div>
             <div class="message-body">
-                Save with success :)
-            </div>
-        </article>
-        <article class="message is-warning">
-            <div class="message-header">
-                Warning!
-            </div>
-            <div class="message-body">
-                Ooops :/
-            </div>
-        </article>
-        <article class="message is-danger">
-            <div class="message-header">
-                Error!
-            </div>
-            <div class="message-body">
-                Ooh no :(
+                {{notification.text}}
             </div>
         </article>
     </div>
@@ -29,11 +15,28 @@
 
 
 <script lang="ts">
-    import { defineComponent } from 'vue'
+    import { TypeNotification } from '@/interfaces/INotification'
+import { computed, defineComponent } from 'vue'
+import { useStore } from 'vuex'
 
     export default defineComponent({
         // eslint-disable-next-line vue/multi-word-component-names
         name: 'Notification',
+        data () {
+            return{
+                context: {
+                    [TypeNotification.SUCCESS] : 'is-success',
+                    [TypeNotification.ATTENTION] : 'is-warning',
+                    [TypeNotification.ERROR] : 'is-danger'
+                }
+            }
+        },
+        setup () {
+            const store = useStore()
+            return {
+                notifications : computed(() => store.state.notifications )
+            }
+        }
     })
 </script>
 

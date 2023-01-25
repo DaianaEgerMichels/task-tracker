@@ -15,9 +15,9 @@
 
 
 <script lang="ts">
-    import { TypeNotification } from '@/interfaces/INotification'
+import { TypeNotification } from '@/interfaces/INotification'
 import { computed, defineComponent } from 'vue'
-import { useStore } from 'vuex'
+import { useStore } from '@/store'
 
     export default defineComponent({
         // eslint-disable-next-line vue/multi-word-component-names
@@ -27,7 +27,7 @@ import { useStore } from 'vuex'
                 context: {
                     [TypeNotification.SUCCESS] : 'is-success',
                     [TypeNotification.ATTENTION] : 'is-warning',
-                    [TypeNotification.ERROR] : 'is-danger'
+                    [TypeNotification.ERROR] : 'is-danger',
                 }
             }
         },

@@ -1,8 +1,8 @@
 <template>
   <TheForm @whenSavingTask="saveTask" />
   <div class="lista">
-    <TaskItem v-for="(task, index) in tasks" :key="index" :task="task" />
     <Box v-if="listIsEmpty"> You are not very productive today :( </Box>
+    <TaskItem v-for="(task, index) in tasks" :key="index" :task="task" />
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default defineComponent({
     };
   },
   methods: {
-    saveTask(task: ITask) {
+    saveTask(task: ITask) : void {
       this.tasks.push(task);
     },
   },

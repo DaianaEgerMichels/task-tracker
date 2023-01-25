@@ -3,7 +3,7 @@
     <div class="column is-one-quarter">
       <SideBar @theChangedTheme="changeTheme"/>
     </div>
-    <div class="column is-three-quarter content">
+    <div class="column is-three-quarters content">
       <Notification/>
       <router-view></router-view>
     </div>

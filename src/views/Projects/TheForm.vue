@@ -19,7 +19,8 @@
 <script lang=ts>
 import { defineComponent } from "vue";
 import { useStore } from "@/store";
-import { ADD_PROJECT, EDIT_PROJECT } from "@/store/type-mutations";
+import { ADD_PROJECT, EDIT_PROJECT, NOTIFY } from "@/store/type-mutations";
+import { TypeNotification } from "@/interfaces/INotification";
 
     export default defineComponent({
         // eslint-disable-next-line vue/multi-word-component-names
@@ -51,7 +52,12 @@ import { ADD_PROJECT, EDIT_PROJECT } from "@/store/type-mutations";
                     this.store.commit(ADD_PROJECT, this.projectName)
                 }
                this.projectName = "";
-               this.$router.push('')
+               this.store.commit(NOTIFY, {
+                    title: 'New project save',
+                    text: 'Ready, your project is now available! :)',
+                    type: TypeNotification.SUCCESS
+                })
+               this.$router.push('/projects')
             }
         },
         setup (){

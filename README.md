@@ -5,7 +5,14 @@ See the project here: </p>
 https://tasktracker-vuejs-alura.netlify.app/
 </p>
 
+#
 <img src="src/assets/img/view.png" alt="view">
+
+##
+
+<img src="src/assets/img/projects_add.png" alt="view">
+
+#
 
 ## Project setup
 ```

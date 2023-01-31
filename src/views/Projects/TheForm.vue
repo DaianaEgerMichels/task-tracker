@@ -20,7 +20,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useStore } from "@/store";
-import { ADD_PROJECT, EDIT_PROJECT, NOTIFY } from "@/store/type-mutations";
+import { ADD_PROJECT, EDIT_PROJECT} from "@/store/type-mutations";
 import { TypeNotification } from "@/interfaces/INotification";
 import useNotifier from "@/hook/notifier"
 

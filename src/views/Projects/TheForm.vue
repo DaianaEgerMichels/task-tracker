@@ -22,7 +22,7 @@ import { defineComponent } from "vue";
 import { useStore } from "@/store";
 import { ADD_PROJECT, EDIT_PROJECT, NOTIFY } from "@/store/type-mutations";
 import { TypeNotification } from "@/interfaces/INotification";
-import { notifyMixins} from "@/mixins/notify"
+import useNotifier from "@/hook/notifier"
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -32,9 +32,6 @@ export default defineComponent({
       type: String,
     },
   },
-  mixins: [
-    notifyMixins
-  ],
   mounted() {
     if (this.id) {
       const project = this.store.state.projects.find(
@@ -65,8 +62,10 @@ export default defineComponent({
   },
   setup() {
     const store = useStore();
+    const {notify} = useNotifier();
     return {
       store,
+      notify
     };
   },
 });

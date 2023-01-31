@@ -32,6 +32,7 @@ export const store = createStore<State>({
     },
     [DELETE_PROJECT](state, id: string) {
       state.projects = state.projects.filter(proj => proj.id != id)
+
     },
     [NOTIFY](state, newNotify: INotification) {
       newNotify.id = new Date().getTime()
